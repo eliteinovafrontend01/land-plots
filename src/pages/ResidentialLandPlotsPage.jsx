@@ -3,11 +3,11 @@ import { ChevronDown, Search, Home, MapPin, Star, Filter, X, Building, Landmark,
 import { useNavigate, useLocation } from "react-router-dom";
 import backgroundImage from "../assets/landandplots/mainbg.png";
 
-const LandAndPlotsPage = () => {
+const ResidentialLandPlotsPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [activeButton, setActiveButton] = useState("Buy");
-  const [activeLandType, setActiveLandType] = useState("All");
+  const [activeLandType, setActiveLandType] = useState("Residential Land / Plots");
   const [openDropdown, setOpenDropdown] = useState(null);
   const [hoveredCategory, setHoveredCategory] = useState(null);
   const [showMobileFilters, setShowMobileFilters] = useState(false);
@@ -134,7 +134,6 @@ const LandAndPlotsPage = () => {
   // Flatten all land types for navigation
   const landTypes = [
     { name: "All", path: "/land-plots", parent: null },
-    // Main category pages
     { name: "Residential Land / Plots", path: "/land-plots/residential-land-plots", parent: null },
     { name: "Commercial Land / Plots", path: "/land-plots/commercial-land-plots", parent: null },
     { name: "Agricultural Land", path: "/land-plots/agricultural-land-plots", parent: null },
@@ -233,7 +232,7 @@ const LandAndPlotsPage = () => {
     if (activeType) {
       setActiveLandType(activeType.name);
     } else {
-      setActiveLandType("All");
+      setActiveLandType("Residential Land / Plots");
     }
   }, [location.pathname]);
 
@@ -325,14 +324,14 @@ const LandAndPlotsPage = () => {
             <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-teal-600/20 to-emerald-600/20 backdrop-blur-lg border border-teal-300/20 animate-float-glow shadow-[0_0_30px_rgba(0,105,92,0.3)]">
               <Star className="w-4 h-4 text-teal-300 animate-spin-slow" fill="currentColor" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-emerald-300 text-sm font-medium">
-                Premium Land & Plots
+                Residential Land & Plots
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-slide-up drop-shadow-[0_0_30px_rgba(0,105,92,0.5)]">
-              Find Your Perfect <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-emerald-300 to-teal-300 animate-gradient-text">Land & Plot</span>
+              Find Your Perfect <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-emerald-300 to-teal-300 animate-gradient-text">Residential Land</span>
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed ">
-              Browse through our verified land and plot properties for your dream project
+              Discover premium residential plots and lands for your dream home
             </p>
             <div className="flex flex-wrap justify-center gap-4 px-4 animate-fade-in-up delay-200">
               {propertyCategories.map((category, index) => (
@@ -467,12 +466,12 @@ const LandAndPlotsPage = () => {
                         <div className="absolute top-full left-0 mt-1 bg-teal-50/95 backdrop-blur-xl rounded-xl shadow-2xl overflow-hidden z-50 min-w-[240px] border border-teal-200/30 animate-slide-down-fast">
                           <div className="py-2 max-h-[400px] overflow-y-auto">
                             {category.submenus.map((submenu) => {
-                              const landType = landTypes.find(t => t.name === submenu);
                               const isSubmenuActive = activeLandType === submenu;
                               return (
                                 <button
                                   key={submenu}
                                   onClick={() => {
+                                    const landType = landTypes.find(t => t.name === submenu);
                                     if (landType) {
                                       handleNavigation(landType.path, submenu);
                                     }
@@ -536,12 +535,12 @@ const LandAndPlotsPage = () => {
                 <div className="bg-teal-50 rounded-xl p-2 border border-teal-200">
                   <div className="flex flex-wrap gap-2 max-h-[200px] overflow-y-auto">
                     {landCategories.find(c => c.name === hoveredCategory)?.submenus.map((submenu) => {
-                      const landType = landTypes.find(t => t.name === submenu);
                       const isSubmenuActive = activeLandType === submenu;
                       return (
                         <button
                           key={submenu}
                           onClick={() => {
+                            const landType = landTypes.find(t => t.name === submenu);
                             if (landType) {
                               handleNavigation(landType.path, submenu);
                             }
@@ -593,17 +592,17 @@ const LandAndPlotsPage = () => {
                   >
                     <div className="absolute inset-0 animate-gradient-shift-slow rounded-3xl"></div>
                     <div className="absolute -inset-4 bg-gradient-to-r from-teal-600 to-emerald-600 rounded-3xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-700"></div>
-                    <Landmark className="w-12 h-12 text-white group-hover:rotate-12 transition-transform duration-700 relative z-10" />
+                    <Building className="w-12 h-12 text-white group-hover:rotate-12 transition-transform duration-700 relative z-10" />
                   </div>
                   
                   <h2 className="text-3xl md:text-4xl font-bold text-teal-900 mb-4 group-hover:text-teal-950 transition-colors duration-300">
-                    {activeLandType === "All" ? "Premium Land & Plots" : `${activeLandType} Properties`}
+                    {activeLandType === "All" ? "Premium Residential Land & Plots" : `${activeLandType} Properties`}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700 animate-gradient-text-slow"> Coming Soon</span>
                   </h2>
                   
                   <p className="text-teal-800 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed group-hover:text-teal-900 transition-colors duration-300 backdrop-blur-sm bg-teal-100/30 rounded-2xl p-6 border border-teal-200/20">
                     {activeLandType === "All" 
-                      ? "We're currently adding verified land and plot listings across all categories."
+                      ? "We're currently adding verified residential land and plot listings across all categories."
                       : `We're currently adding exclusive ${activeLandType.toLowerCase()} listings to our database.`}
                     <span className="block mt-4 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 font-semibold text-xl">
                       Check back soon for amazing deals!
@@ -634,17 +633,17 @@ const LandAndPlotsPage = () => {
                 <div className="max-w-2xl mx-auto">
                   <div className="w-20 h-20 rounded-3xl bg-gradient-to-r from-teal-500/10 to-emerald-500/10 mx-auto mb-6 flex items-center justify-center relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-teal-500/20 to-emerald-500/20 rounded-3xl animate-pulse-slow"></div>
-                    <Landmark className="w-10 h-10 text-teal-600 animate-bounce-slow relative z-10" />
+                    <Building className="w-10 h-10 text-teal-600 animate-bounce-slow relative z-10" />
                   </div>
                   
                   <h3 className="text-2xl font-bold text-teal-900 mb-4">
-                    No {activeLandType !== "All" ? `${activeLandType} ` : ""}Land & Plots Found
+                    No {activeLandType !== "All" ? `${activeLandType} ` : ""}Residential Land & Plots Found
                   </h3>
                   
                   <p className="text-teal-800 mb-6 backdrop-blur-sm bg-teal-100/30 rounded-xl p-4 border border-teal-200/20">
                     {activeLandType !== "All"
                       ? `We don't have any ${activeLandType.toLowerCase()} listings available at the moment.`
-                      : "Click on 'All' to see all properties or hover over any category above and select a subcategory to find specific land types."}
+                      : "Hover over any category above and select a subcategory to find residential land and plots."}
                   </p>
                   
                   <div className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-100">
@@ -658,7 +657,7 @@ const LandAndPlotsPage = () => {
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 font-medium">
                       {activeLandType !== "All" 
                         ? `Check back later for ${activeLandType.toLowerCase()} listings` 
-                        : "Click 'All' to view all properties or select a subcategory from any menu"}
+                        : "Hover over a category above to explore available residential land types"}
                     </span>
                   </div>
                 </div>
@@ -943,4 +942,4 @@ const LandAndPlotsPage = () => {
   );
 };
 
-export default LandAndPlotsPage;
+export default ResidentialLandPlotsPage;
