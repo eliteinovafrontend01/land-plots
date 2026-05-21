@@ -3,11 +3,11 @@ import { ChevronDown, Search, Home, MapPin, Star, Filter, X, Building, Landmark,
 import { useNavigate, useLocation } from "react-router-dom";
 import backgroundImage from "../assets/landandplots/mainbg.png";
 
-const ResidentialLandPlotsPage = () => {
+const CommercialLandPlotsPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [activeButton, setActiveButton] = useState("Buy");
-  const [activeLandType, setActiveLandType] = useState("Residential Land / Plots");
+  const [activeLandType, setActiveLandType] = useState("Commercial Land / Plots");
   const [openDropdown, setOpenDropdown] = useState(null);
   const [hoveredCategory, setHoveredCategory] = useState(null);
   const [showMobileFilters, setShowMobileFilters] = useState(false);
@@ -232,7 +232,7 @@ const ResidentialLandPlotsPage = () => {
     if (activeType) {
       setActiveLandType(activeType.name);
     } else {
-      setActiveLandType("Residential Land / Plots");
+      setActiveLandType("Commercial Land / Plots");
     }
   }, [location.pathname]);
 
@@ -324,14 +324,14 @@ const ResidentialLandPlotsPage = () => {
             <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-teal-600/20 to-emerald-600/20 backdrop-blur-lg border border-teal-300/20 animate-float-glow shadow-[0_0_30px_rgba(0,105,92,0.3)]">
               <Star className="w-4 h-4 text-teal-300 animate-spin-slow" fill="currentColor" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-emerald-300 text-sm font-medium">
-                Residential Land & Plots
+                Commercial Land & Plots
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-slide-up drop-shadow-[0_0_30px_rgba(0,105,92,0.5)]">
-              Find Your Perfect <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-emerald-300 to-teal-300 animate-gradient-text">Residential Land</span>
+              Find Your Perfect <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-emerald-300 to-teal-300 animate-gradient-text">Commercial Land</span>
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed ">
-              Discover premium residential plots and lands for your dream home
+              Discover premium commercial plots and lands for your business ventures
             </p>
             <div className="flex flex-wrap justify-center gap-4 px-4 animate-fade-in-up delay-200">
               {propertyCategories.map((category, index) => (
@@ -592,17 +592,17 @@ const ResidentialLandPlotsPage = () => {
                   >
                     <div className="absolute inset-0 animate-gradient-shift-slow rounded-3xl"></div>
                     <div className="absolute -inset-4 bg-gradient-to-r from-teal-600 to-emerald-600 rounded-3xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-700"></div>
-                    <Building className="w-12 h-12 text-white group-hover:rotate-12 transition-transform duration-700 relative z-10" />
+                    <Building2 className="w-12 h-12 text-white group-hover:rotate-12 transition-transform duration-700 relative z-10" />
                   </div>
                   
                   <h2 className="text-3xl md:text-4xl font-bold text-teal-900 mb-4 group-hover:text-teal-950 transition-colors duration-300">
-                    {activeLandType === "All" ? "Premium Residential Land & Plots" : `${activeLandType} Properties`}
+                    {activeLandType === "All" ? "Premium Commercial Land & Plots" : `${activeLandType} Properties`}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700 animate-gradient-text-slow"> Coming Soon</span>
                   </h2>
                   
                   <p className="text-teal-800 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed group-hover:text-teal-900 transition-colors duration-300 backdrop-blur-sm bg-teal-100/30 rounded-2xl p-6 border border-teal-200/20">
                     {activeLandType === "All" 
-                      ? "We're currently adding verified residential land and plot listings across all categories."
+                      ? "We're currently adding verified commercial land and plot listings across all categories."
                       : `We're currently adding exclusive ${activeLandType.toLowerCase()} listings to our database.`}
                     <span className="block mt-4 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 font-semibold text-xl">
                       Check back soon for amazing deals!
@@ -633,17 +633,17 @@ const ResidentialLandPlotsPage = () => {
                 <div className="max-w-2xl mx-auto">
                   <div className="w-20 h-20 rounded-3xl bg-gradient-to-r from-teal-500/10 to-emerald-500/10 mx-auto mb-6 flex items-center justify-center relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-teal-500/20 to-emerald-500/20 rounded-3xl animate-pulse-slow"></div>
-                    <Building className="w-10 h-10 text-teal-600 animate-bounce-slow relative z-10" />
+                    <Building2 className="w-10 h-10 text-teal-600 animate-bounce-slow relative z-10" />
                   </div>
                   
                   <h3 className="text-2xl font-bold text-teal-900 mb-4">
-                    No {activeLandType !== "All" ? `${activeLandType} ` : ""}Residential Land & Plots Found
+                    No {activeLandType !== "All" ? `${activeLandType} ` : ""}Commercial Land & Plots Found
                   </h3>
                   
                   <p className="text-teal-800 mb-6 backdrop-blur-sm bg-teal-100/30 rounded-xl p-4 border border-teal-200/20">
                     {activeLandType !== "All"
                       ? `We don't have any ${activeLandType.toLowerCase()} listings available at the moment.`
-                      : "Hover over any category above and select a subcategory to find residential land and plots."}
+                      : "Hover over any category above and select a subcategory to find commercial land and plots."}
                   </p>
                   
                   <div className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-100">
@@ -657,7 +657,7 @@ const ResidentialLandPlotsPage = () => {
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 font-medium">
                       {activeLandType !== "All" 
                         ? `Check back later for ${activeLandType.toLowerCase()} listings` 
-                        : "Hover over a category above to explore available residential land types"}
+                        : "Hover over a category above to explore available commercial land types"}
                     </span>
                   </div>
                 </div>
@@ -742,7 +742,7 @@ const ResidentialLandPlotsPage = () => {
                       </span>
                     </label>
                     <div className="grid grid-cols-2 gap-2">
-                      {["commercial Plot", "Road Access", "Water Connection", "Electricity", "Level Ground", "Clear Title", "Approved Layout", "Gated Community", "Highway Facing", "Lake View", "Hill View", "Beach Side"].map((feature) => (
+                      {["Highway Facing", "Main Road Access", "Water Connection", "Electricity", "Level Ground", "Clear Title", "Approved Layout", "Commercial Zone", "High Visibility", "Lake View", "Hill View", "Beach Side"].map((feature) => (
                         <label key={feature} className="flex items-center gap-3 p-2 rounded-lg border border-teal-200/50 hover:border-teal-300 cursor-pointer transition-all duration-300 hover:bg-teal-50/50">
                           <input type="checkbox" className="w-3.5 h-3.5 rounded border-teal-300 text-teal-600 focus:ring-teal-500/30" />
                           <span className="text-xs text-teal-700">{feature}</span>
@@ -778,127 +778,79 @@ const ResidentialLandPlotsPage = () => {
           0%, 100% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
         }
-        .animate-gradient-flow {
-          background-size: 200% 200%;
-          animation: gradient-flow 20s ease infinite;
-        }
-        .animate-gradient-slow {
-          background-size: 300% 300%;
-          animation: gradient-flow 15s ease infinite;
-        }
-        .animate-gradient-shift {
-          background-size: 200% 200%;
-          animation: gradient-flow 2s linear infinite;
-        }
-        .animate-gradient-shift-slow {
-          background-size: 200% 200%;
-          animation: gradient-flow 4s linear infinite;
-        }
-        .animate-gradient-text {
-          background-size: 300% 300%;
-          animation: gradient-flow 3s ease infinite;
-        }
-        .animate-gradient-text-slow {
-          background-size: 300% 300%;
-          animation: gradient-flow 5s ease infinite;
-        }
+        .animate-gradient-flow { background-size: 200% 200%; animation: gradient-flow 20s ease infinite; }
+        .animate-gradient-slow { background-size: 300% 300%; animation: gradient-flow 15s ease infinite; }
+        .animate-gradient-shift { background-size: 200% 200%; animation: gradient-flow 2s linear infinite; }
+        .animate-gradient-shift-slow { background-size: 200% 200%; animation: gradient-flow 4s linear infinite; }
+        .animate-gradient-text { background-size: 300% 300%; animation: gradient-flow 3s ease infinite; }
+        .animate-gradient-text-slow { background-size: 300% 300%; animation: gradient-flow 5s ease infinite; }
         @keyframes particle-float {
           0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); opacity: 0.3; }
           50% { transform: translateY(-40px) translateX(20px) rotate(180deg); opacity: 0.8; }
         }
-        .animate-particle-float {
-          animation: particle-float 12s ease-in-out infinite;
-        }
+        .animate-particle-float { animation: particle-float 12s ease-in-out infinite; }
         @keyframes geometric-float {
           0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
           50% { transform: translateY(-30px) rotate(180deg) scale(1.1); }
         }
-        .animate-geometric-float {
-          animation: geometric-float 20s ease-in-out infinite;
-        }
+        .animate-geometric-float { animation: geometric-float 20s ease-in-out infinite; }
         @keyframes bubble-float {
           0%, 100% { transform: translateY(0px) scale(1); opacity: 0.3; }
           50% { transform: translateY(-25px) scale(1.2); opacity: 0.8; }
         }
-        .animate-bubble-float {
-          animation: bubble-float 6s ease-in-out infinite;
-        }
+        .animate-bubble-float { animation: bubble-float 6s ease-in-out infinite; }
         @keyframes float-glow {
           0%, 100% { transform: translateY(0px); box-shadow: 0 0 30px rgba(0,105,92,0.3); }
           50% { transform: translateY(-5px); box-shadow: 0 0 40px rgba(0,105,92,0.5); }
         }
-        .animate-float-glow {
-          animation: float-glow 3s ease-in-out infinite;
-        }
+        .animate-float-glow { animation: float-glow 3s ease-in-out infinite; }
         @keyframes fade-in-up {
           from { opacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        .animate-fade-in-up {
-          animation: fade-in-up 0.6s ease-out forwards;
-        }
+        .animate-fade-in-up { animation: fade-in-up 0.6s ease-out forwards; }
         @keyframes slide-up {
           from { transform: translateY(30px); opacity: 0; }
           to { transform: translateY(0); opacity: 1; }
         }
-        .animate-slide-up {
-          animation: slide-up 0.5s ease-out forwards;
-        }
+        .animate-slide-up { animation: slide-up 0.5s ease-out forwards; }
         @keyframes slide-down {
           from { transform: translateY(-20px); opacity: 0; }
           to { transform: translateY(0); opacity: 1; }
         }
-        .animate-slide-down {
-          animation: slide-down 0.4s ease-out forwards;
-        }
-        .animate-slide-down-fast {
-          animation: slide-down 0.2s ease-out forwards;
-        }
+        .animate-slide-down { animation: slide-down 0.4s ease-out forwards; }
+        .animate-slide-down-fast { animation: slide-down 0.2s ease-out forwards; }
         @keyframes slide-in-right {
           from { transform: translateX(30px); opacity: 0; }
           to { transform: translateX(0); opacity: 1; }
         }
-        .animate-slide-in-right {
-          animation: slide-in-right 0.5s ease-out forwards;
-        }
+        .animate-slide-in-right { animation: slide-in-right 0.5s ease-out forwards; }
         @keyframes spin-slow {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
         }
-        .animate-spin-slow {
-          animation: spin-slow 20s linear infinite;
-        }
-        .animate-rotate-slow {
-          animation: spin-slow 10s linear infinite;
-        }
+        .animate-spin-slow { animation: spin-slow 20s linear infinite; }
+        .animate-rotate-slow { animation: spin-slow 10s linear infinite; }
         @keyframes bounce-slow {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(-5px); }
         }
-        .animate-bounce-slow {
-          animation: bounce-slow 3s ease-in-out infinite;
-        }
+        .animate-bounce-slow { animation: bounce-slow 3s ease-in-out infinite; }
         @keyframes shimmer {
           0% { transform: translateX(-100%); }
           100% { transform: translateX(100%); }
         }
-        .animate-shimmer {
-          animation: shimmer 3s linear infinite;
-        }
+        .animate-shimmer { animation: shimmer 3s linear infinite; }
         @keyframes progress {
           0% { width: 0%; }
           100% { width: 75%; }
         }
-        .animate-progress {
-          animation: progress 1.5s ease-out forwards;
-        }
+        .animate-progress { animation: progress 1.5s ease-out forwards; }
         @keyframes pulse-slow {
           0%, 100% { opacity: 1; transform: scale(1); }
           50% { opacity: 0.8; transform: scale(1.05); }
         }
-        .animate-pulse-slow {
-          animation: pulse-slow 2s ease-in-out infinite;
-        }
+        .animate-pulse-slow { animation: pulse-slow 2s ease-in-out infinite; }
         .delay-100 { animation-delay: 0.1s; }
         .delay-200 { animation-delay: 0.2s; }
         .delay-300 { animation-delay: 0.3s; }
@@ -908,9 +860,7 @@ const ResidentialLandPlotsPage = () => {
           -ms-overflow-style: none;
           scrollbar-width: none;
         }
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-thin::-webkit-scrollbar {
           height: 4px;
         }
@@ -922,9 +872,7 @@ const ResidentialLandPlotsPage = () => {
           background: linear-gradient(to right, #00695C, #26A69A);
           border-radius: 10px;
         }
-        .lg\:custom-scrollbar::-webkit-scrollbar {
-          width: 6px;
-        }
+        .lg\:custom-scrollbar::-webkit-scrollbar { width: 6px; }
         .lg\:custom-scrollbar::-webkit-scrollbar-track {
           background: linear-gradient(to bottom, transparent, rgba(0, 105, 92, 0.1), transparent);
           border-radius: 10px;
@@ -942,4 +890,4 @@ const ResidentialLandPlotsPage = () => {
   );
 };
 
-export default ResidentialLandPlotsPage;
+export default CommercialLandPlotsPage;
