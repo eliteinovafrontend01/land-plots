@@ -39,7 +39,7 @@ const LandAndPlotsPage = () => {
         "Gated Community Plot",
         "Villa Plot",
         "Farm House Plot",
-        "Corner Plot",
+        "Commercial Plot",
         "Independent House Plot",
         "Duplex House Plot",
         "Row House Plot"
@@ -144,14 +144,14 @@ const LandAndPlotsPage = () => {
     { name: "Investment & Special Purpose Land", path: "/land-plots/investment-land-plots", parent: null },
     // Residential submenus
     { name: "Residential Plot", path: "/land-plots/residential-land-plots/residential-plot", parent: "Residential Land / Plots" },
-    { name: "DTCP & CMDA Approved Plot", path: "/land-plots/dtcp-cmda-approved-plot", parent: "Residential Land / Plots" },
-    { name: "Gated Community Plot", path: "/land-plots/gated-community-plot", parent: "Residential Land / Plots" },
-    { name: "Villa Plot", path: "/land-plots/villa-plot", parent: "Residential Land / Plots" },
-    { name: "Farm House Plot", path: "/land-plots/farm-house-plot", parent: "Residential Land / Plots" },
-    { name: "Corner Plot", path: "/land-plots/corner-plot", parent: "Residential Land / Plots" },
+    { name: "DTCP & CMDA Approved Plot", path: "/land-plots/residential-land-plots/dtcp-cmda-approved-plot", parent: "Residential Land / Plots" },
+    { name: "Gated Community Plot", path: "/land-plots/residential-land-plots/gated-community-plot", parent: "Residential Land / Plots" },
+    { name: "Villa Plot", path: "/land-plots/residential-land-plots/villa-plot", parent: "Residential Land / Plots" },
+    { name: "Farm House Plot", path: "/land-plots/residential-land-plots/farm-house-plot", parent: "Residential Land / Plots" },
+    { name: "Commercial Plot", path: "/land-plots/commercial-plot", parent: "Residential Land / Plots" },
     { name: "Independent House Plot", path: "/land-plots/independent-house-plot", parent: "Residential Land / Plots" },
     { name: "Duplex House Plot", path: "/land-plots/duplex-house-plot", parent: "Residential Land / Plots" },
-    { name: "Row House Plot", path: "/land-plots/row-house-plot", parent: "Residential Land / Plots" },
+    { name: "Row House Plot", path: "/land-plots/residential-land-plots/row-house-plot", parent: "Residential Land / Plots" },
     // Commercial submenus
     { name: "Commercial Plot", path: "/land-plots/commercial-plot", parent: "Commercial Land / Plots" },
     { name: "Office Space Land", path: "/land-plots/office-space-land", parent: "Commercial Land / Plots" },
@@ -743,7 +743,7 @@ const LandAndPlotsPage = () => {
                       </span>
                     </label>
                     <div className="grid grid-cols-2 gap-2">
-                      {["Corner Plot", "Road Access", "Water Connection", "Electricity", "Level Ground", "Clear Title", "Approved Layout", "Gated Community", "Highway Facing", "Lake View", "Hill View", "Beach Side"].map((feature) => (
+                      {["commercial Plot", "Road Access", "Water Connection", "Electricity", "Level Ground", "Clear Title", "Approved Layout", "Gated Community", "Highway Facing", "Lake View", "Hill View", "Beach Side"].map((feature) => (
                         <label key={feature} className="flex items-center gap-3 p-2 rounded-lg border border-teal-200/50 hover:border-teal-300 cursor-pointer transition-all duration-300 hover:bg-teal-50/50">
                           <input type="checkbox" className="w-3.5 h-3.5 rounded border-teal-300 text-teal-600 focus:ring-teal-500/30" />
                           <span className="text-xs text-teal-700">{feature}</span>
