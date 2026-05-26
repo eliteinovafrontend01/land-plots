@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import { ChevronDown, Search, Home, MapPin, Star, Filter, X, Building, Landmark, Warehouse, Building2, Store, Factory, Hotel, Briefcase, Trees, Sprout, Heart, School, Layers, ChevronRight, Compass } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import backgroundImage from "../assets/landandplots/mainbg.png";
-import OfficeSpaceLandFilter from "../components/filters/OfficeSpaceLandFilter";
-import OfficeSpaceLand from "../components/propertycard/OfficeSpaceLand";
+import HospitalClinicLandFilter from "../components/filters/HospitalClinicLandFilter";
+import HospitalClinicLand from "../components/propertycard/HospitalClinicLand";
 
-const OfficeSpaceLandPage = () => {
+const HospitalClinicLandPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [activeButton, setActiveButton] = useState("Buy");
-  const [activeLandType, setActiveLandType] = useState("OfficeSpace Land");
+  const [activeLandType, setActiveLandType] = useState("HospitalClinic Land");
   const [openDropdown, setOpenDropdown] = useState(null);
   const [hoveredCategory, setHoveredCategory] = useState(null);
   const [showFilterModal, setShowFilterModal] = useState(false);
@@ -91,7 +91,7 @@ const OfficeSpaceLandPage = () => {
         "Logistics Hub Land",
         "Warehouse Plot",
         "Cold Storage Land",
-        "SEZ Land (Special Economic Zone)"
+        "SEZ Land"
       ]
     },
     {
@@ -234,7 +234,7 @@ const OfficeSpaceLandPage = () => {
     if (activeType) {
       setActiveLandType(activeType.name);
     } else {
-      setActiveLandType("OfficeSpace Land");
+      setActiveLandType("HospitalClinic Land");
     }
   }, [location.pathname]);
 
@@ -300,7 +300,7 @@ const OfficeSpaceLandPage = () => {
       <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-teal-400 group-hover:text-teal-600 group-hover:scale-110 transition-all duration-300 z-10" />
       <input
         type="text"
-        placeholder="Search OfficeSpace Lands by city, locality, or project name"
+        placeholder="Search HospitalClinic Lands by city, locality, or project name"
         className="w-full pl-11 pr-11 py-2 rounded-xl border-2 border-teal-200/50 bg-teal-50/90 text-sm focus:outline-none focus:border-teal-400 transition-all duration-300"
       />
       <MapPin className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-teal-300 group-hover:text-emerald-500 group-hover:rotate-12 transition-all duration-300 z-10" />
@@ -391,17 +391,17 @@ const OfficeSpaceLandPage = () => {
             <div className="hidden sm:inline-flex mb-1 items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-teal-600/20 to-emerald-600/20 backdrop-blur-lg border border-teal-300/20 animate-float-glow shadow-[0_0_30px_rgba(0,105,92,0.3)]">
               <Star className="w-4 h-4 text-teal-300 animate-spin-slow" fill="currentColor" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-emerald-300 text-sm font-medium">
-                OfficeSpace Lands
+                HospitalClinic Lands
               </span>
             </div>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white animate-slide-up drop-shadow-[0_0_30px_rgba(0,105,92,0.5)]">
               Find Your Perfect{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-emerald-300 to-teal-300 animate-gradient-text">
-                OfficeSpace Land
+                HospitalClinic Land
               </span>
             </h1>
             <p className="text-sm md:text-base lg:text-lg text-white/90 max-w-3xl mx-auto leading-relaxed px-2">
-              Discover premium OfficeSpace Lands for your dream home
+              Discover premium HospitalClinic Lands for your dream project
             </p>
             <PropertyCategoryButtons />
           </div>
@@ -590,7 +590,7 @@ const OfficeSpaceLandPage = () => {
         {showFilterModal && (
           <div className="fixed inset-0 z-[9999] flex items-start justify-center pt-[140px] px-4 pb-4 bg-black/50 backdrop-blur-sm animate-fade-in">
             <div className="relative w-full max-w-2xl max-h-[80vh] overflow-y-auto">
-              <OfficeSpaceLandFilter
+              <HospitalClinicLandFilter
                 activeTab={activeButton}
                 onFilterChange={handleFilterChange}
                 onClose={() => setShowFilterModal(false)}
@@ -608,14 +608,14 @@ const OfficeSpaceLandPage = () => {
             {/* ── Property Cards ── */}
             <div className="w-full lg:w-2/3">
               <section>
-                <OfficeSpaceLand />
+                <HospitalClinicLand />
               </section>
             </div>
 
             {/* ── Sidebar Filter (desktop only) ── */}
             <div className="hidden lg:block lg:w-1/3 lg:relative">
               <div className="lg:sticky lg:top-[120px] lg:max-h-[calc(100vh-140px)] lg:overflow-y-auto lg:scrollbar-hide animate-slide-in-right">
-                <OfficeSpaceLandFilter
+                <HospitalClinicLandFilter
                   activeTab={activeButton}
                   onFilterChange={handleFilterChange}
                 />
@@ -695,4 +695,4 @@ const OfficeSpaceLandPage = () => {
   );
 };
 
-export default OfficeSpaceLandPage;
+export default HospitalClinicLandPage;

@@ -19,6 +19,24 @@ import PetrolBunkPlotPage from './pages/PetrolBunkPlotpage';
 import ITParkLandPage from './pages/ITParkLandPage';
 import WarehouseLandPage from './pages/WarehouseLandPage';
 import IndustrialCommercialPlotPage from './pages/IndustrialCommercialPlotPage';
+import IndustrialLandPlotPage from './pages/IndustrialLandPlotPage';
+import IndustrialPlotPage from './pages/IndustrialPlotPage';
+import FactoryLandPage from './pages/FactoryLandPage';
+import ManufacturingUnitPlotPage from './pages/ManufacturingUnitPlotPage';
+import LogisticsHubLandPage from './pages/LogisticsHubLandPage';
+import WarehousePlotPage from './pages/WarehousePlotPage';
+import ColdStorageLandPage from './pages/ColdStorageLandPage';
+import SEZLandPage from './pages/SEZLandPage';
+import MixedUseLandPlotPage from './pages/MixedUseLandPlotPage';
+import ResidentialCommercialPlotPage from './pages/ResidentialCommercialPlotPage';
+import CommercialIndustrialLandPage from './pages/CommercialIndustrialLandPage';
+import TownshipDevelopmentLandPage from './pages/TownshipDevelopmentLandPage';
+import MultiPurposeDevelopmentLandPage from './pages/MultiPurposeDevelopmentLandPage';
+import InstitutionalLandPlotPage from './pages/InstitutionalLandPlotPage';
+import SchoolCollegeLandPage from './pages/SchoolCollegeLandPage';
+import HospitalClinicLandPage from './pages/HospitalClinicLandPage';
+import TrainingInstitutePlotPage from './pages/TrainingInstitutePlotPage';
+import ReligiousInstitutionLandPage from './pages/ReligiousInstitutionLandPage';
 
 
 const App = () => {
@@ -55,7 +73,33 @@ const App = () => {
           <Route path="/land-plots/commercial-land-plots/it-park-land" element={<ITParkLandPage/>} />
           <Route path="/land-plots/commercial-land-plots/warehouse-land" element={<WarehouseLandPage/>} />
           <Route path="/land-plots/commercial-land-plots/industrial-commercial-plot" element={<IndustrialCommercialPlotPage/>} />
-          
+
+          {/* Industrial land  Routes */}
+
+           <Route path="/land-plots/industrial-land-plots" element={<IndustrialLandPlotPage/>} />
+           <Route path="/land-plots/industrial-land-plots/industrial-plot" element={<IndustrialPlotPage/>} />
+           <Route path="land-plots/industrial-land-plots/factory-land" element={<FactoryLandPage/>} />
+           <Route path="/land-plots/industrial-land-plots/manufacturing-unit-plot" element={<ManufacturingUnitPlotPage/>} />
+           <Route path="/land-plots/industrial-land-plots/logistics-hub-land" element={<LogisticsHubLandPage/>} />
+           <Route path="/land-plots/industrial-land-plots/warehouse-plot" element={<WarehousePlotPage/>} />
+           <Route path="/land-plots/industrial-land-plots/cold-storage-land" element={<ColdStorageLandPage/>} />
+           <Route path="/land-plots/industrial-land-plots/sez-land" element={<SEZLandPage/>} />
+
+           {/* Mixed-Use land  Routes */}
+
+           <Route path="/land-plots/mixed-use-land-plots" element={<MixedUseLandPlotPage/>} />
+           <Route path="/land-plots/mixed-use-land-plots/residential-commercial-plot" element={<ResidentialCommercialPlotPage/>} />
+           <Route path="/land-plots/mixed-use-land-plots/commercial-industrial-land" element={<CommercialIndustrialLandPage/>} />
+           <Route path="/land-plots/mixed-use-land-plots/township-development-land" element={<TownshipDevelopmentLandPage/>} />
+           <Route path="/land-plots/mixed-use-land-plots/multi-purpose-development-land" element={<MultiPurposeDevelopmentLandPage/>} />
+
+           {/* Institutional land  Routes */}
+
+           <Route path="/land-plots/institutional-land-plots" element={<InstitutionalLandPlotPage/>} />
+           <Route path="/land-plots/institutional-land-plots/school-college-land" element={<SchoolCollegeLandPage/>} />
+           <Route path="/land-plots/institutional-land-plots/hospital-clinic-land" element={<HospitalClinicLandPage/>} />
+           <Route path="/land-plots/institutional-land-plots/training-institute-plot" element={<TrainingInstitutePlotPage/>} />
+           <Route path="/land-plots/institutional-land-plots/religious-institution-land" element={<ReligiousInstitutionLandPage/>} />
 
         </Routes>
      </BrowserRouter> 

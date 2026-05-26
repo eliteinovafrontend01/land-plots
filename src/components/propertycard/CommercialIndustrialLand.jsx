@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { VillaPlotData } from "../data/VillaPlotData";
+import { CommercialIndustrialLandData } from "../data/CommercialIndustrialLandData";
 
-const PAGE_NAME = "Villa Plot";
+const PAGE_NAME = "CommercialIndustrial Land";
 
 // Helper: split price into amount + unit
 const splitPrice = (price) => {
@@ -606,11 +606,11 @@ const PropertyCard = ({ property, onContactClick }) => {
   );
 };
 
-const VillaPlot = () => {
+const CommercialIndustrialLand = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [selectedProperty, setSelectedProperty] = useState(null);
   const [showContactInfo, setShowContactInfo] = useState(false);
-  const [filteredProperties, setFilteredProperties] = useState(VillaPlotData);
+  const [filteredProperties, setFilteredProperties] = useState(CommercialIndustrialLandData);
 
   const handleContactClick = (property) => {
     setSelectedProperty(property);
@@ -636,7 +636,7 @@ const VillaPlot = () => {
               <div className="w-full bg-white rounded-2xl shadow-2xl border border-teal-100 p-8 text-center">
                 <div className="text-5xl mb-3">🔍</div>
                 <h3 className="text-lg font-bold text-slate-800 mb-1">No Properties Found</h3>
-                <p className="text-xs text-slate-500">No VillaPlot apartments available at the moment.</p>
+                <p className="text-xs text-slate-500">No CommercialIndustrialLand apartments available at the moment.</p>
               </div>
             )}
           </div>
@@ -704,4 +704,4 @@ const VillaPlot = () => {
   );
 };
 
-export default VillaPlot;
+export default CommercialIndustrialLand;

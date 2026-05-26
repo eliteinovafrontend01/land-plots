@@ -89,7 +89,7 @@ const LandAndPlotsPage = () => {
         "Logistics Hub Land",
         "Warehouse Plot",
         "Cold Storage Land",
-        "SEZ Land (Special Economic Zone)"
+        "SEZ Land"
       ]
     },
     {

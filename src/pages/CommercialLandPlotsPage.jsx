@@ -89,7 +89,7 @@ const CommercialLandPlotsPage = () => {
         "Logistics Hub Land",
         "Warehouse Plot",
         "Cold Storage Land",
-        "SEZ Land (Special Economic Zone)"
+        "SEZ Land"
       ]
     },
     {
@@ -152,7 +152,9 @@ const CommercialLandPlotsPage = () => {
     { name: "Duplex House Plot", path: "/land-plots/residential-land-plots/duplex-house-plot", parent: "Residential Land / Plots" },
     { name: "Row House Plot", path: "/land-plots/residential-land-plots/row-house-plot", parent: "Residential Land / Plots" },
     // Commercial submenus
-    { name: "Commercial Plot", path: "/land-plots/commercial-land-plots/commercial-plot", parent: "Commercial Land / Plots" },
+    { name: "Commercial Plot",
+      
+      path: "/land-plots/commercial-land-plots/commercial-plot", parent: "Commercial Land / Plots" },
     { name: "Office Space Land", path: "/land-plots/commercial-land-plots/office-space-land", parent: "Commercial Land / Plots" },
     { name: "Retail Shop Plot", path: "/land-plots/commercial-land-plots/retail-shop-plot", parent: "Commercial Land / Plots" },
     { name: "Showroom Plot", path: "/land-plots/commercial-land-plots/showroom-plot", parent: "Commercial Land / Plots" },
