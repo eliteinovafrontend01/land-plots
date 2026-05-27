@@ -37,6 +37,15 @@ import SchoolCollegeLandPage from './pages/SchoolCollegeLandPage';
 import HospitalClinicLandPage from './pages/HospitalClinicLandPage';
 import TrainingInstitutePlotPage from './pages/TrainingInstitutePlotPage';
 import ReligiousInstitutionLandPage from './pages/ReligiousInstitutionLandPage';
+import InvestmentLandPlotPage from './pages/InvestmentLandPlotPage';
+import HighwayFacingPlotPage from './pages/HighwayFacingPlotPage';
+import LakeViewPlotPage from './pages/LakeViewPlotPage';
+import HillViewPlotPage from './pages/HillViewPlotPage';
+import BeachSidePlotPage from './pages/BeachSidePlotPage';
+import RiverSideLandPage from './pages/RiverSideLandPage';
+import EcoTourismLandPage from './pages/EcoTourismLandPage';
+import LayoutDevelopmentLandPage from './pages/LayoutDevelopmentLandPage';
+import FutureInvestmentPlotPage from './pages/FutureInvestmentPlotPage';
 
 
 const App = () => {
@@ -100,6 +109,20 @@ const App = () => {
            <Route path="/land-plots/institutional-land-plots/hospital-clinic-land" element={<HospitalClinicLandPage/>} />
            <Route path="/land-plots/institutional-land-plots/training-institute-plot" element={<TrainingInstitutePlotPage/>} />
            <Route path="/land-plots/institutional-land-plots/religious-institution-land" element={<ReligiousInstitutionLandPage/>} />
+
+           {/* Investment land  Routes */}
+
+           <Route path="/land-plots/investment-land-plots" element={<InvestmentLandPlotPage/>} />
+           <Route path="/land-plots/investment-land-plots/highway-facing-plot" element={<HighwayFacingPlotPage/>} />
+
+
+           <Route path="/land-plots/investment-land-plots/lake-view-plot" element={<LakeViewPlotPage/>} />
+           <Route path="/land-plots/investment-land-plots/hill-view-plot" element={<HillViewPlotPage/>} />
+           <Route path="/land-plots/investment-land-plots/beach-side-plot" element={<BeachSidePlotPage/>} />
+           <Route path="/land-plots/investment-land-plots/river-side-land" element={<RiverSideLandPage/>} />
+           <Route path="/land-plots/investment-land-plots/eco-tourism-land" element={<EcoTourismLandPage/>} />
+           <Route path="/land-plots/investment-land-plots/layout-development-land" element={<LayoutDevelopmentLandPage/>} />
+           <Route path="/land-plots/investment-land-plots/future-investment-plot" element={<FutureInvestmentPlotPage/>} />
 
         </Routes>
      </BrowserRouter> 
